@@ -21,9 +21,9 @@
 #include "android_runtime/AndroidRuntime.h"
 
 #include "jni.h"
-#include "JNIHelp.h"
-#include "ScopedLocalRef.h"
-#include "ScopedPrimitiveArray.h"
+#include <nativehelper/JNIHelp.h>
+#include <nativehelper/ScopedLocalRef.h>
+#include <nativehelper/ScopedPrimitiveArray.h>
 
 #include <fcntl.h>
 #include <pty.h>
@@ -216,7 +216,6 @@ static int term_settermprop(VTermProp prop, VTermValue *val, void *user) {
 }
 
 static int term_setmousefunc(VTermMouseFunc func, void *data, void *user) {
-    Terminal* term = reinterpret_cast<Terminal*>(user);
 #if DEBUG_CALLBACKS
     ALOGW("term_setmousefunc");
 #endif
