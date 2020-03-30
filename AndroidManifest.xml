@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2013 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +15,22 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.android.terminal">
+     package="com.android.terminal">
 
-    <application
-        android:label="@string/app_label"
-        android:enabled="false">
+    <application android:label="@string/app_label"
+         android:enabled="false">
 
-        <activity
-            android:name=".TerminalActivity"
-            android:windowSoftInputMode="stateAlwaysVisible|adjustResize">
+        <activity android:name=".TerminalActivity"
+             android:windowSoftInputMode="stateAlwaysVisible|adjustResize"
+             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <service android:name=".TerminalService" />
+        <service android:name=".TerminalService"/>
     </application>
 
 </manifest>
